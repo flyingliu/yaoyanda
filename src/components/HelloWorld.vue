@@ -7,8 +7,8 @@
                 <div class="img"></div>
                 <div class="wrap">
                     <div class="logo">耀研达</div>
-                    <div class="article">
-                        <h1>公司主营业务：</h1>
+                    <div class="article ">
+                        <h1 class="title">公司主营业务：</h1>
                         <ul class="ul">
                             <li>第三类医疗器械经营；</li>
                             <li>货物进出口；</li>
@@ -31,16 +31,18 @@
         </swiper-slide>
         <swiper-slide>
             <div class="page map">
-                <div class="img">耀研达</div>
+                <div class="img1"></div>
                 <div class="wrap">
-                    <div class="article">
-                        <h1>公司主营业务：</h1>
-                        <h5>
-                            <a target="_blank" href="https://map.baidu.com/search/%E8%8B%8F%E5%B7%9E%E5%B8%82%E6%98%86%E5%B1%B1%E5%B8%82%E8%8A%B1%E6%A1%A5%E9%95%87%E4%B8%AD%E7%A7%91%E5%88%9B%E6%96%B0%E5%B9%BF%E5%9C%BA1%E5%8F%B7%E6%A5%BC/@13478148.125,3649640,19z?querytype=s&da_src=shareurl&wd=%E8%8B%8F%E5%B7%9E%E5%B8%82%E6%98%86%E5%B1%B1%E5%B8%82%E8%8A%B1%E6%A1%A5%E9%95%87%E4%B8%AD%E7%A7%91%E5%88%9B%E6%96%B0%E5%B9%BF%E5%9C%BA1%E5%8F%B7%E6%A5%BC&c=340&src=0&pn=0&sug=0&l=15&b=(12692958,2570854;12705246,2576758)&from=webmap&biz_forward=%7B%22scaler%22:2,%22styles%22:%22pl%22%7D&device_ratio=2">
+                    <div class="article article1">
+                        <h1 class="link">联系方式：</h1>
+                        <ul class="noneul">
+                        <li>
+                            <span>地址：</span><a target="_blank" href="https://map.baidu.com/search/%E8%8B%8F%E5%B7%9E%E5%B8%82%E6%98%86%E5%B1%B1%E5%B8%82%E8%8A%B1%E6%A1%A5%E9%95%87%E4%B8%AD%E7%A7%91%E5%88%9B%E6%96%B0%E5%B9%BF%E5%9C%BA1%E5%8F%B7%E6%A5%BC/@13478148.125,3649640,19z?querytype=s&da_src=shareurl&wd=%E8%8B%8F%E5%B7%9E%E5%B8%82%E6%98%86%E5%B1%B1%E5%B8%82%E8%8A%B1%E6%A1%A5%E9%95%87%E4%B8%AD%E7%A7%91%E5%88%9B%E6%96%B0%E5%B9%BF%E5%9C%BA1%E5%8F%B7%E6%A5%BC&c=340&src=0&pn=0&sug=0&l=15&b=(12692958,2570854;12705246,2576758)&from=webmap&biz_forward=%7B%22scaler%22:2,%22styles%22:%22pl%22%7D&device_ratio=2">
                               苏州市昆山市花桥镇中科创新广场1号楼B座13楼1309室
                             </a>
-                        </h5>
-                        <h5><a href="tel:0512-55193815">0512-55193815</a></h5>
+                        </li>
+                        <li><span>电话：</span><a href="tel:0512-55193815">0512-55193815</a></li>
+                        </ul>
                         <div class="swiper-button-prev button draw">关于我们</div>
     
                     </div>
@@ -75,13 +77,46 @@ const navigation = ref({
     width: 100%;
     height: 100%;
 }
+.article {
+    margin: 5% 0 0 10%;
+    text-align: left;
+    opacity: 1;
+    font: 18px/24px arial;
+}
+
+.article h5 {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 16px;
+}
 
 .article h1 {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 600;
     color: #333;
     margin-bottom: 16px;
 }
+
+.article ul {
+  font:14px/1.75 arial;
+    padding-left: 16px;
+}
+
+.article1 {
+  margin: 10% 0 0 0;
+  padding: 20px 0 20px 10%;
+  background: rgba(255,255,255,.7)
+}
+
+
+
+.article ul.noneul {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+
 
 .logo {
     margin: 10% 0 0 10%;
@@ -92,11 +127,8 @@ const navigation = ref({
     font-size: 0;
 }
 
-.article {
-    margin: 5% 0 0 10%;
-    text-align: left;
-    opacity: 1;
-}
+
+
 
 .img {
     width: 100vw;
@@ -109,6 +141,19 @@ const navigation = ref({
     background-size: cover;
     opacity: 0.5;
 }
+
+.img1 {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background: url(../assets/map.png) #fff no-repeat center;
+    background-size: cover;
+    opacity: 0.8;
+}
+
 
 .wrap {
     position: relative;
@@ -134,17 +179,19 @@ const navigation = ref({
 }
 
 .button {
-    background: none;
+    background: rgba(255,255,255,.6);
     border: 0;
     box-sizing: border-box;
     box-shadow: inset 0 0 0 2px var(--main-color);
     color: var(--main-color);
     font-size: inherit;
     font-weight: 700;
-    padding: 10px;
+    padding: 5px 10px;
     display: inline-block;
     position: relative;
     vertical-align: middle;
+    font: 14px/2 arial;
+    font-weight: 500;
 }
 
 .button::before,
