@@ -1,7 +1,21 @@
 # Vue 3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
 ## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+第三类医疗器械经营；
+货物进出口；
+技术进出口；
+检验检测服务：基因检测，免疫检测，微生物检测，亚健康生化和生理功能检测；
+生物化工产品技术研发；
+医学研究和试验发展；
+专用化学产品销售；
+细胞技术研发和应用；
+亚健康保健服务；
+人体干细胞技术开发和应用
+
+苏州市昆山市花桥镇中科创新广场1号楼B座13楼1309室
+
+0512-55193815
+
+http://www.yaoyanda.cn
