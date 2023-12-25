@@ -2,52 +2,31 @@
 name: CI
 # 指定触发workflow的条件
 # 下面的意思就是在监听到main分支push操作的时候运行
-
 on:
-  # 仅在推送到默认分支时运行。
   push:
-    branches: ['main']
+    branches: [main]
 
-  # 这个选项可以使你手动在 Action tab 页面触发工作流
-  workflow_dispatch:
-
-# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages。
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# 允许一个并发的部署
-concurrency:
-  group: 'pages'
-  cancel-in-progress: true
-
+# jobs 表示要执行的一项或者多项任务
 jobs:
-  # 单次部署的工作描述
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # 任务名，可自定义
+  build-and-deploy:
+    # runs-on字段指定运行所需要的虚拟机环境。它是必填字段。目前可用的虚拟机如下。
     runs-on: ubuntu-latest
+    # steps表示执行步骤
     steps:
+      # 检出代码，这里用了 actions/checkout@master 库来完成
       - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'npm'
-      - name: Install dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          # Upload dist repository
-          path: './dist'
+        uses: actions/checkout@master
+      # 这里展示了如何执行多条命令
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
+      # 这里引用了别人写好的发布库，具体参数信息可以查阅上面的链接
+      # https://github.com/JamesIves/github-pages-deploy-action
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        uses: JamesIves/github-pages-deploy-action@4.0.0
+        with:
+          branch: gh-pages
+          folder: dist
+          # cname: www.yaoyanda.com
