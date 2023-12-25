@@ -2,13 +2,6 @@
 name: CI
 # 指定触发workflow的条件
 # 下面的意思就是在监听到main分支push操作的时候运行
-on:
-  push:
-    branches: [main]
-
-# jobs 表示要执行的一项或者多项任务
-# 将静态内容部署到 GitHub Pages 的简易工作流程
-name: Deploy static content to Pages
 
 on:
   # 仅在推送到默认分支时运行。
