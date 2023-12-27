@@ -137,9 +137,9 @@ const navigation = ref({
     z-index: 0;
     top: 0;
     left: 0;
-    background: url(../assets/bg1.jpg) #fff no-repeat center;
+    background: url(../assets/bg2.jpg) #fff no-repeat center;
     background-size: cover;
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .img1 {
